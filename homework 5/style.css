@@ -2,30 +2,40 @@
   border: 1px solid red;
 }
 header {
+   /*setting the background box*/
    background-color: #DDA448;
    position:  fixed;
    top: 0;
    left: 0;
    right: 0;
-   height: 202px;
+   padding: 69px 0px;
+   text-align: center;
 }
 
 header * {
+   /*making the list horizontal*/
    display: inline;
+   /*aligning the words together*/
+   vertical-align: middle;
 }
 
 header li{
+   /*adding space between categories*/
    margin:  24px;
+   
 }
 
 header li a{
+   /*making the categories match design*/
    color: black;
    text-decoration: none;
    font-family: Montserrat;
    font-size: 30px;
+   
 }
 
 #logo {
+  /*Fluff Stuff Logo home button*/
   font-size: 64px;
   font-family: Baskerville;
   text-decoration: none;
