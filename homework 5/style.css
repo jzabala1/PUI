@@ -1,5 +1,5 @@
 * {
-  border: 1px solid red;
+ ;
 }
 header {
    /*setting the background box*/
@@ -29,9 +29,8 @@ header li a{
    /*making the categories match design*/
    color: black;
    text-decoration: none;
-   font-family: Montserrat;
+   font-family: Montserrat, sans-serif;
    font-size: 30px;
-   
 }
 
 #logo {
@@ -40,4 +39,27 @@ header li a{
   font-family: Baskerville;
   text-decoration: none;
   color: black;
+}
+
+footer{
+  margin-top: 1000px;
+  text-align: center;
+  font-family: Montserrat, sans-serif;
+}
+
+footer ul{
+  display: inline-block;
+  list-style-type: none;
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+footer ul .foottitle {
+  font-size: 16px;
+}
+
+footer p{
+  color: black;
+  font-size: 14px;
 }
