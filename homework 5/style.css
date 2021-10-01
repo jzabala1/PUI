@@ -1,5 +1,4 @@
 * {
-  border: 1px solid red;
   text-align: center;
   color: black;
   text-decoration: none;
@@ -12,6 +11,7 @@ header {
    left: 0;
    right: 0;
    padding: 69px 0px;
+   z-index: 10;
 }
 
 header * {
@@ -21,9 +21,21 @@ header * {
    vertical-align: middle;
 }
 
+input[type=text] {
+  background-color: #E4B363;
+  color: black;
+  background-image: url(https://cdn2.iconfinder.com/data/icons/minimal-set-five/32/minimal-48-512.png);
+  background-size: 15px;
+  background-position: 10px;
+  background-repeat: no-repeat;
+  height: 25px;
+  border-radius: 19px;
+  font-family: Montserrat;
+}
+
 header li{
    /*adding space between categories*/
-   margin:  24px;
+   margin:  20px;
 }
 
 header li a{
@@ -39,36 +51,44 @@ header li a{
 }
 
 footer{
-  margin-top: 425px;
+  /* This centers the box and puts it the bottom*/
+  margin-top: 150px;
   text-align: center;
   font-family: Montserrat;
 }
 
 footer ul{
+  /* Removes bullets and puts two lists next to each other*/
   display: inline-block;
   list-style-type: none;
   font-size: 14px;
 }
 
 footer ul .foottitle {
+  /* Footer title*/
   font-size: 16px;
 }
 
 footer p{
+  /*All materials font*/
   font-size: 14px;
 }
 
 body{
+  /* Aligning body with footer and header*/
   margin-top: 200px;
   margin-left: 175px;
   height: 806px;
   width: 1153px;
 }
 
+#salefluff {
+  padding: 35px;
+}
+
 body h2{
   font-family: Baskerville;
   font-size: 36px;
-  padding: 35px;
   box-sizing: border-box;
   text-align: left;
   font-weight: normal;
@@ -80,22 +100,83 @@ body #saletext{
   width: 330px;
 }
 
+
+
 body .link{
   box-sizing: border-box;
   text-align: left;
   font-weight: normal;
-  padding-left: 35px;
   text-decoration: underline;
   font-family: Montserrat;
   font-size: 26px;
+}
+
+#link1{
+  padding-left: 35px;
 }
 
 #firstimage {
   width: 798px;
   height: 379px;
   padding-left: 20px;
+  position: absolute;
+  top: 229px;
+  left: 509px ;
 }
 
-body .sale{
-  float: left;
+#learnmore{
+  background-color: #DDA448;
+  clear: both;
+  width: 198px;
+  height: 275px;
+  margin-left: 10px;
+  position: relative;
+  top: 25px;
+  opacity: 90%;
+}
+
+#local{
+  padding-left: 16px;
+  padding-top: 20px;
+}
+
+#locallink{
+  padding-left: 16px;
+  font-size: 20px;
+}
+
+#yarn{
+  width: 448px;
+  height: 379px;
+  object-fit: cover;
+  position: absolute;
+  top: 622px;
+  left: 176px;
+}
+
+#middleimage{
+  width: 445px;
+  height: 379px;
+  object-fit: cover;
+  position: absolute;
+  top: 622px;
+  left: 645px;
+}
+
+#bestsellers{
+  width: 212px;
+  height: 379px;
+  position: absolute;
+  top: 622px;
+  left: 1115px;
+  background-color: #DDC3D0;
+}
+
+#bestlink{
+  font-size: 20px;
+}
+
+.bestsell{
+  padding-left: 20px;
+  padding-right: 20px;
 }
