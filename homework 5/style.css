@@ -22,10 +22,8 @@ header * {
 }
 
 input[type=text] {
-  /*formatting the search bar to match design */
   background-color: #E4B363;
   color: black;
-  /*importing search icon*/
   background-image: url(https://cdn2.iconfinder.com/data/icons/minimal-set-five/32/minimal-48-512.png);
   background-size: 15px;
   background-position: 10px;
@@ -85,10 +83,12 @@ body{
 }
 
 #salefluff {
+  /*Aligning the fluff stuff body heading */
   padding: 35px;
 }
 
 body h2{
+  /*setting the look for all of the headings*/
   font-family: Baskerville;
   font-size: 36px;
   box-sizing: border-box;
@@ -97,14 +97,14 @@ body h2{
 }
 
 body #saletext{
+  /*setting the size and color of text backing box */
   background-color: #8CBCB9;
   height: 379px;
   width: 330px;
 }
 
-
-
 body .link{
+  /*setting the universal rules for the body links*/
   box-sizing: border-box;
   text-align: left;
   font-weight: normal;
@@ -114,10 +114,12 @@ body .link{
 }
 
 #link1{
+  /*Padding for the first link */
   padding-left: 35px;
 }
 
 #firstimage {
+  /*Size and position of first image */
   width: 798px;
   height: 379px;
   padding-left: 20px;
@@ -127,8 +129,8 @@ body .link{
 }
 
 #learnmore{
+  /*Setting the orange overlay for the learn more text*/
   background-color: #DDA448;
-  clear: both;
   width: 198px;
   height: 275px;
   margin-left: 10px;
@@ -137,17 +139,14 @@ body .link{
   opacity: 90%;
 }
 
-#local{
+.local{
+  /*padding for text*/
   padding-left: 16px;
   padding-top: 20px;
 }
 
-#locallink{
-  padding-left: 16px;
-  font-size: 20px;
-}
-
 #yarn{
+  /*cropping and moving yarn image*/
   width: 448px;
   height: 379px;
   object-fit: cover;
@@ -157,6 +156,7 @@ body .link{
 }
 
 #middleimage{
+  /*size and position of middle image*/
   width: 445px;
   height: 379px;
   object-fit: cover;
@@ -166,6 +166,7 @@ body .link{
 }
 
 #bestsellers{
+  /* best sellers box*/
   width: 212px;
   height: 379px;
   position: absolute;
@@ -175,10 +176,12 @@ body .link{
 }
 
 #bestlink{
+  /* bestseller link font size*/
   font-size: 20px;
 }
 
 .bestsell{
+  /*padding for best seller text*/
   padding-left: 20px;
   padding-right: 20px;
 }
