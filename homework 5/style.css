@@ -22,8 +22,10 @@ header * {
 }
 
 input[type=text] {
+  /*formatting the search bar to match design */
   background-color: #E4B363;
   color: black;
+  /*importing search icon*/
   background-image: url(https://cdn2.iconfinder.com/data/icons/minimal-set-five/32/minimal-48-512.png);
   background-size: 15px;
   background-position: 10px;
