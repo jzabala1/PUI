@@ -9,11 +9,11 @@
 
 <header>
 	<nav>
-    <a href="Fluff_Stuff_Home_Page.html" id= "logo">FluffStuff</a>
+    <a href="" id= "logo">FluffStuff</a>
 		<ul>
 		   <!-- navbar text and links -->
 		   <li><a href="">All</a></li>
-		   <li><a href="">Couch</a></li>
+		   <li><a href="ProductPage.html">Couch</a></li>
 		   <li><a href="">Bed</a></li>
 		   <li><a href="">Round</a></li>
 		   <li><a href="">Floor Pouf</a></li>
@@ -26,9 +26,36 @@
 	</nav>
 </header>
 
-<body>
-  <div>
+<body id="browsebody">
+  <!--bread crumbs and headings -->
+  <div id="sectiondescription">
+    <p class= "browsefont" id="breadcrumbs">Home > Couch</p>
+    <p class= "browsefont" id="sectiontitle">Couch</p>
+    <p id="productamount">7 products</p>
+    <p class= "browsefont" id="sectiontext">Our couch pillows will add a touch of coziness to your living rooms.
+    </p>
+    <hr size="2" width="100%" color="#E4B363">
   </div>
+  <div id="sort">
+    <p class="listname">Sort by:</p>
+    <!--Creating drop down menu -->
+    <select id="dropdown" name="sort-by">
+      <option value="bestsellers">Best Sellers</option>
+      <option value="newest">Newest</option>
+      <option value="low-high">Low-High</option>
+      <option value="high-low">High-Low</option>
+    </select>
+    <hr size="2" width="100%" color="#E4B363">
+  </div>
+  <div id="filters">
+    <p class="listname">Filter by:</p>
+    <ul>
+      <li>+function</li>
+      <li>+color</li>
+      <li>+filling</li>
+    </ul>
+  </div>
+  <div class = "vertical"></div>
 </body>
 
 <footer>

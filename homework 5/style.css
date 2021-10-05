@@ -187,3 +187,113 @@ body .link{
   padding-left: 20px;
   padding-right: 20px;
 }
+
+/*Browsing Page*/
+
+#browsebody{
+  /*body of the browsing page*/
+  margin-top: 200px;
+  margin-left: 23px;
+  margin-right: 23px;
+  height: 806px;
+  width: 1390px
+}
+
+#sectiondescription{
+  /*border box for category description*/
+  postion: absolute;
+  top: 379px;
+  left: 23px;
+  width: 331px;
+  height: 200px;
+}
+
+.browsefont{
+  /*setting fonts for the main couch text,breadcrumbs and description*/
+  font-family: Baskerville;
+}
+
+#breadcrumbs{
+  /*Adjusting size and position of breadcrumbs*/
+  text-align: left;
+  font-size: 24px;
+  color: #575555;
+  postion: relative;
+}
+
+#sectiontitle{
+  /*Couch size and position*/
+  font-size: 36px;
+  text-align: left;
+  position: absolute;
+  top: 200px;
+}
+
+#productamount{
+  /*Product amount color, size, and position*/
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  color: #575555;
+  position: absolute;
+  top: 235px;
+  left: 125px; 
+}
+
+#sectiontext{
+  /*section text size and position*/
+  font-size: 24px;
+  text-align: left;
+  margin-top: 50px;
+}
+
+#sort{
+  /*postition of sorting border box*/ 
+  postion: absolute;
+  top: 330px;
+  left: 23px;
+  width: 331px;
+  height: 165px;
+}
+
+#dropdown{
+  /*drop down menu position */
+  position: absolute;
+  top: 430px;
+  left: 125px;
+}
+
+.listname{
+  /*Positioning sort by and font*/
+  text-align: left;
+  font-family: Montserrat, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#filters{
+  width: 331px;
+  height: 324px;
+  position: absolute;
+  top: 490px;
+}
+
+#filters ul{
+  list-style-type: none;
+  position: absolute;
+  top: 45px;
+}
+
+#filters ul li{
+  text-align: left;
+  font-size: 24px;
+  font-family: Montserrat, sans-serif;
+}
+
+.vertical{
+  /*method of getting a vertical line I got from geeksforgeeks.org*/
+   border-left: 2px solid #E4B363;
+   height: 540px;
+   position:absolute;
+   top: 200px;
+   left: 355px;
+}
