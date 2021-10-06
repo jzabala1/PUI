@@ -629,6 +629,7 @@ input[type=number] {
   top: 750px;
   left: 725px;
   height: 25px;
+  width:  100px;
   font-family: Montserrat;
 }
 
