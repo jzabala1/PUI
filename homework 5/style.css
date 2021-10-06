@@ -66,6 +66,15 @@ footer{
   font-family: Montserrat;
 }
 
+hr{
+  height: 1px;
+  width: 100%; 
+  /*Added these three rules because it depends on the browser you are using which one will work*/
+  border-color: #E4B363;
+  background-color: #E4B363;
+  color: #E4B363;
+}
+
 footer ul{
   /* Removes bullets and puts two lists next to each other*/
   display: inline-block;
@@ -208,9 +217,6 @@ body .link{
 
 #sectiondescription{
   /*border box for category description*/
-  postion: absolute;
-  top: 379px;
-  left: 23px;
   width: 331px;
   height: 200px;
 }
@@ -225,7 +231,7 @@ body .link{
   text-align: left;
   font-size: 24px;
   color: #575555;
-  postion: relative;
+  position: relative;
 }
 
 #sectiontitle{
@@ -254,10 +260,7 @@ body .link{
 }
 
 #sort{
-  /*postition of sorting border box*/ 
-  postion: absolute;
-  top: 330px;
-  left: 23px;
+  /*size of sorting border box*/ 
   width: 331px;
   height: 165px;
 }
@@ -503,7 +506,7 @@ body .link{
   /*Adjusting size and position of breadcrumbs on detail page*/
   font-size: 24px;
   color: #575555;
-  postion: relative;
+  position: relative;
 }
 
 /*size and positions of right hand text on detail page*/
