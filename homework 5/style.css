@@ -448,12 +448,15 @@ body .link{
 /*product detail page*/
 
 #detailbody{
+  /*setting body size for detail page*/
   margin-top: 200px;
   margin-left: 23px;
   margin-right: 23px;
   height: 600px;
   width: 1390px
 }
+
+/*Thumbnails positioning and sizing*/
 
 #thumbnailone{
   width: 212px;
@@ -492,15 +495,18 @@ body .link{
 }
 
 .heading{
+  /*setting heading fonts*/
   font-family: Baskerville;
 }
 
 #breadcrumbsdetail{
-  /*Adjusting size and position of breadcrumbs*/
+  /*Adjusting size and position of breadcrumbs on detail page*/
   font-size: 24px;
   color: #575555;
   postion: relative;
 }
+
+/*size and positions of right hand text on detail page*/
 
 #detailtitle{
   font-size: 36px;
@@ -534,10 +540,13 @@ body .link{
 }
 
 .dot {
+  /*creating the color circles*/
   height: 50px;
   width: 50px;
   border-radius: 50%; 
 }
+
+/*setting each circle color and position*/
 
 #morninghazecircle{
   position: absolute;
@@ -566,6 +575,8 @@ body .link{
   top: 425px;
   left: 1190px;
 }
+
+/*setting color names and positions*/
 
 .colorname{
   font-family: Montserrat, sans-serif;
@@ -634,6 +645,7 @@ input[type=number] {
 }
 
 #addtobag{
+  /*add to bag button*/
   width: 330px;
   height: 104px;
   position: absolute;
