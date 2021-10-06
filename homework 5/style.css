@@ -59,6 +59,12 @@ footer{
   font-family: Montserrat;
 }
 
+#browsingfoot{
+  margin-top: 450px;
+  text-align: center;
+  font-family: Montserrat;
+}
+
 footer ul{
   /* Removes bullets and puts two lists next to each other*/
   display: inline-block;
@@ -271,6 +277,7 @@ body .link{
 }
 
 #filters{
+  /*Filter box position*/
   width: 331px;
   height: 324px;
   position: absolute;
@@ -278,12 +285,14 @@ body .link{
 }
 
 #filters ul{
+  /*Removing list bullets and moving them up*/
   list-style-type: none;
   position: absolute;
   top: 45px;
 }
 
 #filters ul li{
+  /*Filter text fonts*/
   text-align: left;
   font-size: 24px;
   font-family: Montserrat, sans-serif;
@@ -292,8 +301,149 @@ body .link{
 .vertical{
   /*method of getting a vertical line I got from geeksforgeeks.org*/
    border-left: 2px solid #E4B363;
-   height: 540px;
+   height: 840px;
    position:absolute;
    top: 200px;
    left: 355px;
+}
+
+/*product images positoning each image and the text under them*/
+
+#productimages p{
+  text-align: left;
+  font-family: Montserrat, sans-serif;;
+  font-size: 24px;
+}
+
+#firstproduct{
+  width: 330px;
+  height: 290px;
+  position: absolute;
+  top: 201px;
+  left: 400px;
+  object-fit: cover;
+}
+
+#producttext1{
+  position: absolute;
+  top: 491px;
+  left: 400px;
+}
+
+#productprice1{
+  position: absolute;
+  top: 521px;
+  left: 400px;
+}
+
+#secondproduct{
+  width: 330px;
+  height: 290px;
+  position: absolute;
+  top: 201px;
+  left: 770px;
+  object-fit: cover;
+}
+
+#producttext2{
+  position: absolute;
+  top: 491px;
+  left: 770px;
+}
+
+#productprice2{
+  position: absolute;
+  top: 521px;
+  left: 770px;
+}
+
+#thirdproduct{
+  width: 330px;
+  height: 290px;
+  position: absolute;
+  top: 201px;
+  left: 1140px;
+  object-fit: cover;
+}
+
+#producttext3{
+  position: absolute;
+  top: 491px;
+  left: 1140px;
+}
+
+#productprice3{
+  position: absolute;
+  top: 521px;
+  left: 1140px;
+}
+
+#fourthproduct{
+  width: 330px;
+  height: 290px;
+  position: absolute;
+  top: 600px;
+  left: 400px;
+  object-fit: cover;
+}
+
+#producttext4{
+  position: absolute;
+  top: 891px;
+  left: 400px;
+}
+
+#productprice4{
+  position: absolute;
+  top: 921px;
+  left: 400px;
+}
+
+#fifthproduct{
+  width: 330px;
+  height: 290px;
+  position: absolute;
+  top: 600px;
+  left: 770px;
+  object-fit: cover;
+}
+
+#producttext5{
+  position: absolute;
+  top: 891px;
+  left: 770px;
+}
+
+#productprice5{
+  position: absolute;
+  top: 921px;
+  left: 770px;
+}
+
+#sixthproduct{
+  width: 330px;
+  height: 290px;
+  position: absolute;
+  top: 600px;
+  left: 1140px;
+  object-fit: cover;
+}
+
+#producttext6{
+  position: absolute;
+  top: 891px;
+  left: 1140px;
+}
+
+#productprice6{
+  position: absolute;
+  top: 921px;
+  left: 1140px;
+}
+
+#pagenum{
+  /*putting pagenum at the bottom of the page*/
+  position: absolute;
+  top: 980px;
+  left: 900px;
 }
