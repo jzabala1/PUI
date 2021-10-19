@@ -10,7 +10,7 @@
    <script src="selection.js" type="text/javascript"></script>
 </head>
 
-<body>
+<body id ="bagbody">
 	<header>
     <nav>
       <a href="Fluff_Stuff_Home_Page.html" id= "logo">FluffStuff</a>
@@ -30,12 +30,32 @@
     </nav>
   </header>
 
-  <div id ="">
-    
-  </div>
 
-  <!--Establishing the popup with the number on the bag icon-->
-  <div id="popupcircle">0</div>
+  <div class ="heading">
+    <h1 id = "shopheading" class= "bagheading">Shopping Bag</h1>
+    <h1 id = "orderheading"class= "bagheading">Order Summary</h1>
+  </div> 
+
+  <div class ="leftcolumn">
+    <hr>
+    <ul>
+      <li id="itemheading">Item</li>
+      <li>Price</li>
+      <li>Quantity</li>
+      <li>Total</li>
+    </ul>
+    <hr>
+  </div> 
+  
+  <div class ="rightcolumn">
+    <p id="subtotal">Subtotal:</p>
+    <p id="shipping">Shipping: </p>
+    <p id="tax">Estimated Tax: </p>
+    <p id="total">Total: </p>
+    <button id="checkout">Proceed to Checkout</button>
+  </div> 
+  
+
 
   <footer>
     <!-- line -->

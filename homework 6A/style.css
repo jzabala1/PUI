@@ -92,7 +92,7 @@ footer p{
   font-size: 14px;
 }
 
-body{
+.normalbody{
   /* Aligning body with footer and header*/
   margin-top: 200px;
   margin-left: 175px;
@@ -453,10 +453,10 @@ body .link{
 #detailbody{
   /*setting body size for detail page*/
   margin-top: 200px;
-  margin-left: 23px;
+  margin-left: 95px;
   margin-right: 23px;
   height: 600px;
-  width: 1390px
+  width: 1250px
 }
 
 /*Thumbnails positioning and sizing*/
@@ -673,4 +673,88 @@ input[type=number] {
   color: white;
   font-family: Montserrat;
   visibility: hidden;
+}
+
+#bagbody{
+  /*setting body size for bag page*/
+  margin-top: 200px;
+  margin-left: 23px;
+  margin-right: 23px;
+  height: 600px;
+}
+
+.bagheading{
+  font-family: Baskerville;
+  display: inline-block;
+  font-size: 24px;
+}
+
+#heading{
+  width: 1390px;
+}
+
+#shopheading{
+  margin-right: 800px;
+}
+
+#orderheading{
+  margin-right: 300px;
+}
+
+.leftcolumn{
+  float: left;
+  padding-left: 25px;
+  width: 945px;
+  text-align: left;
+  
+}
+
+.leftcolumn p{
+  text-align: left;
+}
+
+.rightcolumn p{
+  text-align: left;
+  font-family: Montserrat;
+  font-size: 18px;
+}
+
+.rightcolumn{
+  float: left;
+  width: 400px;
+}
+
+.leftcolumn hr{
+  height: .5px;
+  width: 95%; 
+  margin-right: 100px;
+  /*Added these three rules because it depends on the browser you are using which one will work*/
+  border-color: #E4B363;
+  background-color: #E4B363;
+  color: #E4B363;
+}
+
+.leftcolumn ul li{
+  /*making the list horizontal*/
+  display: inline;
+  /*aligning the words together*/
+  vertical-align: middle;
+  margin: 45px;
+  font-family: Baskersville;
+  font-size: 18px; 
+}
+
+#itemheading{
+  margin-right: 420px;
+  margin-left: 0px;
+}
+
+#checkout{
+  background-color: #8CBCB9;
+  border: none;
+  width: 440px; 
+  height: 88px;
+  font-family: Baskersville;
+  font-size: 24px;
+  margin: 50px 0px;
 }
