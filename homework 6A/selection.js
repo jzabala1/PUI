@@ -1,6 +1,7 @@
 let colorArray = ["rainydaycircle"]
 
 function selectColor(id) {
+  //This function makes the clicked on color circle seledcted by having a border 
   let colorCircle = document.getElementById(id);
   if (id != colorArray[colorArray.length-1]){
     colorCircle.style.border = "solid";
@@ -12,6 +13,7 @@ function selectColor(id) {
 }
 
 function changeImage(id) {
+  //this function goes into the documents and changes the images depending on the color selected 
   let thumbOne = document.getElementById("thumbnailone");
   let thumbTwo = document.getElementById("thumbnailtwo");
   let thumbThree = document.getElementById("thumbnailthree");
@@ -74,7 +76,11 @@ function changeImage(id) {
   }
 }
 
+
+
 function bagPopUp() {
+  //this function makes it so the pop up accurately has the quantity and also makes things popup when add to bag is clicked
+  //also stores information from page
   let quant = document.getElementById('quantity').value;
   let select = document.getElementById('dropdownfilling');
   let text = select.options[select.selectedIndex].text;
@@ -82,5 +88,6 @@ function bagPopUp() {
   if (quant != 0) {
    document.getElementById("popupcircle").innerHTML = `${quant}`;
    popupcircle.style.visibility = "visible";
+   popup.style.visibility = "visible";
  }
 }

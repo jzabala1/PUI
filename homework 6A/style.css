@@ -662,6 +662,7 @@ input[type=number] {
 }
 
 #popupcircle{
+  /*style of the popup circle */
   width: 20px;
   height: 20px;
   position: fixed;
@@ -700,6 +701,8 @@ input[type=number] {
 #orderheading{
   margin-right: 300px;
 }
+
+/* setting up right and left columns on bag page*/
 
 .leftcolumn{
   float: left;
@@ -750,6 +753,7 @@ input[type=number] {
 }
 
 #checkout{
+  /*checkout button*/
   background-color: #8CBCB9;
   border: none;
   width: 440px; 
@@ -757,4 +761,56 @@ input[type=number] {
   font-family: Baskersville;
   font-size: 24px;
   margin: 50px 0px;
+}
+
+/*styles of the popup on the add to bag page*/
+
+#popup{
+  background-color: white;
+  opacity: 95%;
+  border: solid;
+  position: absolute;
+  top: 200px;
+  left: 250px;
+  width: 920px;
+  height: 650px;
+  visibility: hidden;
+}
+
+
+.suggestedfont{
+  font-family: Montserrat, sans-serif;
+}
+
+#success{
+  font-size: 24px;
+  margin: 30px 50px; 
+}
+
+#suggest{
+  font-size: 20px;
+}
+
+#suggestedproduct{
+ width: 250px;
+ height: 250px;
+}
+
+.popupbutton{
+  /*both buttons style*/
+  width: 330px;
+  height: 80px;
+  border: none;
+  font-family: Montserrat, sans-serif;
+  font-size: 24px;
+}
+
+#continuetobag{
+  background-color: #8CBCB9;
+  margin-right: 10px;
+}
+
+#backtobrowse{ 
+  background-color: #DDC3D0;
+  margin-left: 10px;
 }
