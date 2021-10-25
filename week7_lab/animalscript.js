@@ -59,5 +59,10 @@ function onLoad() {
   let imageTag = document.getElementById("animal-img");
   imageTag.setAttribute("src", animal.image);
   imageTag.setAttribute("alt", animal.image_alt);
-
+  
+  let btn = getElementById("button-save");
+  btn.textContent = "save!";
+  btn.addEventListener("click", function()){
+    localStorage.setItem("savedAnimal", JSON.stringify(animal));
+  }
 }
