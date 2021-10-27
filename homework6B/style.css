@@ -1,0 +1,818 @@
+* {
+  /* universal rules for text*/
+  text-align: center;
+  color: black;
+  text-decoration: none;
+}
+
+header {
+   /*setting the background box*/
+   background-color: #DDA448;
+   position:  fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   padding: 55px 0px;
+   z-index: 10;
+}
+
+header * {
+   /*making the list horizontal*/
+   display: inline;
+   /*aligning the words together*/
+   vertical-align: middle;
+}
+
+input[type=text] {
+  /*search bar*/
+  background-color: #E4B363;
+  color: black;
+  background-image: url(https://cdn2.iconfinder.com/data/icons/minimal-set-five/32/minimal-48-512.png);
+  background-size: 15px;
+  background-position: 10px;
+  background-repeat: no-repeat;
+  height: 25px;
+  border-radius: 19px;
+  font-family: Montserrat;
+}
+
+header li{
+   /*adding space between categories*/
+   margin:  20px;
+}
+
+header li a{
+   /*making the categories match design*/
+   font-family: Montserrat;
+   font-size: 30px;
+}
+
+#logo {
+  /*Fluff Stuff Logo home button*/
+  font-size: 64px;
+  font-family: Baskerville;
+}
+
+footer{
+  /* This centers the box and puts it the bottom*/
+  margin-top: 150px;
+  text-align: center;
+  font-family: Montserrat;
+}
+
+#browsingfoot{
+  margin-top: 450px;
+  text-align: center;
+  font-family: Montserrat;
+}
+
+hr{
+  height: 1px;
+  width: 100%; 
+  /*Added these three rules because it depends on the browser you are using which one will work*/
+  border-color: #E4B363;
+  background-color: #E4B363;
+  color: #E4B363;
+}
+
+footer ul{
+  /* Removes bullets and puts two lists next to each other*/
+  display: inline-block;
+  list-style-type: none;
+  font-size: 14px;
+}
+
+footer ul .foottitle {
+  /* Footer title*/
+  font-size: 16px;
+}
+
+footer p{
+  /*All materials font*/
+  font-size: 14px;
+}
+
+.normalbody{
+  /* Aligning body with footer and header*/
+  margin-top: 200px;
+  margin-left: 175px;
+  height: 806px;
+  width: 1153px;
+}
+
+#salefluff {
+  /*Aligning the fluff stuff body heading */
+  padding: 35px;
+}
+
+body h2{
+  /*setting the look for all of the headings*/
+  font-family: Baskerville;
+  font-size: 36px;
+  box-sizing: border-box;
+  text-align: left;
+  font-weight: normal;
+}
+
+body #saletext{
+  /*setting the size and color of text backing box */
+  background-color: #8CBCB9;
+  height: 379px;
+  width: 330px;
+}
+
+body .link{
+  /*setting the universal rules for the body links*/
+  box-sizing: border-box;
+  text-align: left;
+  font-weight: normal;
+  text-decoration: underline;
+  font-family: Montserrat;
+  font-size: 26px;
+}
+
+#link1{
+  /*Padding for the first link */
+  padding-left: 35px;
+}
+
+#firstimage {
+  /*Size and position of first image */
+  width: 798px;
+  height: 379px;
+  padding-left: 20px;
+  position: absolute;
+  top: 201px;
+  left: 509px ;
+}
+
+#learnmore{
+  /*Setting the orange overlay for the learn more text*/
+  background-color: #DDA448;
+  width: 198px;
+  height: 275px;
+  margin-left: 10px;
+  position: relative;
+  top: 25px;
+  opacity: 90%;
+}
+
+.local{
+  /*padding for text*/
+  padding-left: 16px;
+  padding-top: 20px;
+}
+
+#yarn{
+  /*cropping and moving yarn image*/
+  width: 448px;
+  height: 379px;
+  object-fit: cover;
+  position: absolute;
+  top: 622px;
+  left: 176px;
+}
+
+#middleimage{
+  /*size and position of middle image*/
+  width: 445px;
+  height: 379px;
+  object-fit: cover;
+  position: absolute;
+  top: 622px;
+  left: 645px;
+}
+
+#bestsellers{
+  /* best sellers box*/
+  width: 212px;
+  height: 379px;
+  position: absolute;
+  top: 622px;
+  left: 1115px;
+  background-color: #DDC3D0;
+}
+
+#bestlink{
+  /* bestseller link font size*/
+  font-size: 20px;
+}
+
+.bestsell{
+  /*padding for best seller text*/
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/*Browsing Page*/
+
+#browsebody{
+  /*body of the browsing page*/
+  margin-top: 200px;
+  margin-left: 23px;
+  margin-right: 23px;
+  height: 806px;
+  width: 1390px
+}
+
+#sectiondescription{
+  /*border box for category description*/
+  width: 331px;
+  height: 200px;
+}
+
+.browsefont{
+  /*setting fonts for the main couch text,breadcrumbs and description*/
+  font-family: Baskerville;
+}
+
+#breadcrumbs{
+  /*Adjusting size and position of breadcrumbs*/
+  text-align: left;
+  font-size: 24px;
+  color: #575555;
+  position: relative;
+}
+
+#sectiontitle{
+  /*Couch size and position*/
+  font-size: 36px;
+  text-align: left;
+  position: absolute;
+  top: 200px;
+}
+
+#productamount{
+  /*Product amount color, size, and position*/
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  color: #575555;
+  position: absolute;
+  top: 235px;
+  left: 125px; 
+}
+
+#sectiontext{
+  /*section text size and position*/
+  font-size: 24px;
+  text-align: left;
+  margin-top: 50px;
+}
+
+#sort{
+  /*size of sorting border box*/ 
+  width: 331px;
+  height: 165px;
+}
+
+#dropdown{
+  /*drop down menu position */
+  position: absolute;
+  top: 430px;
+  left: 125px;
+}
+
+.listname{
+  /*Positioning sort by and font*/
+  text-align: left;
+  font-family: Montserrat, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#filters{
+  width: 331px;
+  height: 324px;
+  position: absolute;
+  top: 490px;
+}
+
+#filters ul{
+  list-style-type: none;
+  position: absolute;
+  top: 45px;
+}
+
+#filters ul li{
+  text-align: left;
+  font-size: 24px;
+  font-family: Montserrat, sans-serif;
+}
+
+.vertical{
+  /*method of getting a vertical line I got from geeksforgeeks.org*/
+   border-left: 2px solid #E4B363;
+   height: 840px;
+   position:absolute;
+   top: 200px;
+   left: 355px;
+}
+
+/*product images*/
+
+#productimages p{
+  text-align: left;
+  font-family: Montserrat, sans-serif;
+  font-size: 24px;
+}
+
+#firstproduct{
+  width: 330px;
+  height: 290px;
+  position: absolute;
+  top: 201px;
+  left: 400px;
+  object-fit: cover;
+}
+
+#producttext1{
+  position: absolute;
+  top: 491px;
+  left: 400px;
+}
+
+#productprice1{
+  position: absolute;
+  top: 521px;
+  left: 400px;
+}
+
+#secondproduct{
+  width: 330px;
+  height: 290px;
+  position: absolute;
+  top: 201px;
+  left: 770px;
+  object-fit: cover;
+}
+
+#producttext2{
+  position: absolute;
+  top: 491px;
+  left: 770px;
+}
+
+#productprice2{
+  position: absolute;
+  top: 521px;
+  left: 770px;
+}
+
+#thirdproduct{
+  width: 330px;
+  height: 290px;
+  position: absolute;
+  top: 201px;
+  left: 1140px;
+  object-fit: cover;
+}
+
+#producttext3{
+  position: absolute;
+  top: 491px;
+  left: 1140px;
+}
+
+#productprice3{
+  position: absolute;
+  top: 521px;
+  left: 1140px;
+}
+
+#fourthproduct{
+  width: 330px;
+  height: 290px;
+  position: absolute;
+  top: 600px;
+  left: 400px;
+  object-fit: cover;
+}
+
+#producttext4{
+  position: absolute;
+  top: 891px;
+  left: 400px;
+}
+
+#productprice4{
+  position: absolute;
+  top: 921px;
+  left: 400px;
+}
+
+#fifthproduct{
+  width: 330px;
+  height: 290px;
+  position: absolute;
+  top: 600px;
+  left: 770px;
+  object-fit: cover;
+}
+
+#producttext5{
+  position: absolute;
+  top: 891px;
+  left: 770px;
+}
+
+#productprice5{
+  position: absolute;
+  top: 921px;
+  left: 770px;
+}
+
+#sixthproduct{
+  width: 330px;
+  height: 290px;
+  position: absolute;
+  top: 600px;
+  left: 1140px;
+  object-fit: cover;
+}
+
+#producttext6{
+  position: absolute;
+  top: 891px;
+  left: 1140px;
+}
+
+#productprice6{
+  position: absolute;
+  top: 921px;
+  left: 1140px;
+}
+
+#pagenum{
+  position: absolute;
+  top: 980px;
+  left: 900px;
+}
+
+/*product detail page*/
+
+#detailbody{
+  /*setting body size for detail page*/
+  margin-top: 200px;
+  margin-left: 95px;
+  margin-right: 23px;
+  height: 600px;
+  width: 1250px
+}
+
+/*Thumbnails positioning and sizing*/
+
+#thumbnailone{
+  width: 212px;
+  height: 177px;
+  position: absolute;
+  top: 200px;
+  left: 20px;
+  object-fit: cover;
+}
+
+#thumbnailtwo{
+  width: 212px;
+  height: 177px;
+  position: absolute;
+  top: 397px;
+  left: 20px;
+  object-fit: cover;
+}
+
+#thumbnailthree{
+  width: 212px;
+  height: 177px;
+  position: absolute;
+  top: 594px;
+  left: 20px;
+  object-fit: cover; 
+}
+
+#largethumbnail{
+  width: 448px;
+  height: 570px;
+  position: absolute;
+  top: 200px;
+  left: 252px;
+  object-fit: cover;
+}
+
+.heading{
+  /*setting heading fonts*/
+  font-family: Baskerville;
+}
+
+#breadcrumbsdetail{
+  /*Adjusting size and position of breadcrumbs on detail page*/
+  font-size: 24px;
+  color: #575555;
+  position: relative;
+}
+
+/*size and positions of right hand text on detail page*/
+
+#detailtitle{
+  font-size: 36px;
+  position: absolute;
+  top: 200px;
+  left: 715px;
+}
+
+#productdetailprice{
+  font-size: 24px;
+  font-family: Montserrat, sans-serif;
+  position: absolute;
+  top: 220px;
+  left: 1000px;
+}
+
+#productdetailtext{
+  font-size: 24px;
+  text-align: left;
+  position: absolute;
+  top: 260px;
+  left: 715px;
+  width: 500px;
+}
+
+#colortitle{
+  font-size: 24px;
+  position: absolute;
+  top: 360px;
+  left: 715px;
+}
+
+.dot {
+  /*creating the color circles*/
+  height: 50px;
+  width: 50px;
+  border-radius: 50%; 
+}
+
+/*setting each circle color and position*/
+
+#morninghazecircle{
+  position: absolute;
+  background-color: #ECB651;
+  top: 425px;
+  left: 740px;
+}
+
+#rainydaycircle{
+  position: absolute;
+  background-color: #999CA1;
+  top: 425px;
+  left: 890px;
+  border: solid;
+}
+
+#cozydenimcircle{
+  position: absolute;
+  background-color: #1B233A;
+  top: 425px;
+  left: 1040px;
+}
+
+#ascircle{
+  position: absolute;
+  background-color: #F4D4C8;
+  top: 425px;
+  left: 1190px;
+}
+
+/*setting color names and positions*/
+
+.colorname{
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  width: 104px;
+  height: 31px;
+}
+
+#morninghaze{
+  position: absolute;
+  top: 460px;
+  left: 715px;
+}
+
+#rainyday{
+  position: absolute;
+  top: 460px;
+  left: 865px;
+}
+
+#cozydenim{
+  position: absolute;
+  top: 460px;
+  left: 1015px;
+}
+
+#afterschool{
+  position: absolute;
+  top: 460px;
+  left: 1165px;
+}
+
+#filling{
+  font-size: 24px;
+  position: absolute;
+  top: 550px;
+  left: 715px;
+}
+
+#dropdownfilling{
+  /*drop down menu position */
+  position: absolute;
+  top: 620px;
+  left: 715px;
+  width: 480px;
+  height: 30px;
+  font-family: Montserrat;
+}
+
+#quantitytitle{
+  font-size: 24px;
+  position: absolute;
+  top: 670px;
+  left: 715px;
+}
+
+input[type=number] {
+  /*quantity number box*/
+  color: black;
+  position: absolute;
+  top: 750px;
+  left: 725px;
+  height: 25px;
+  width:  100px;
+  font-family: Montserrat;
+}
+
+#addtobag{
+  /*add to bag button*/
+  width: 330px;
+  height: 104px;
+  position: absolute;
+  top: 670px;
+  left: 920px;
+  background-color: #8CBCB9;
+  box-shadow: 3px 3px 5px grey;
+  font-size: 24px;
+  border: none;
+}
+
+#popupcircle{
+  /*style of the popup circle */
+  width: 20px;
+  height: 20px;
+  position: fixed;
+  z-index: 11;
+  top: 65px;
+  left: 1422px;
+  border-radius: 50%;
+  background-color: black;  
+  color: white;
+  font-family: Montserrat;
+  visibility: hidden;
+}
+
+#bagbody{
+  /*setting body size for bag page*/
+  margin-top: 200px;
+  margin-left: 23px;
+  margin-right: 23px;
+  height: 600px;
+}
+
+.bagheading{
+  font-family: Baskerville;
+  display: inline-block;
+  font-size: 24px;
+}
+
+#heading{
+  width: 1390px;
+}
+
+#shopheading{
+  margin-right: 800px;
+}
+
+#orderheading{
+  margin-right: 300px;
+}
+
+/* setting up right and left columns on bag page*/
+
+.leftcolumn{
+  float: left;
+  padding-left: 25px;
+  width: 945px;
+  text-align: left;
+  
+}
+
+.leftcolumn p{
+  text-align: left;
+}
+
+.rightcolumn p{
+  text-align: left;
+  font-family: Montserrat;
+  font-size: 18px;
+}
+
+.rightcolumn{
+  float: left;
+  width: 400px;
+}
+
+.leftcolumn hr{
+  height: .5px;
+  width: 95%; 
+  margin-right: 100px;
+  /*Added these three rules because it depends on the browser you are using which one will work*/
+  border-color: #E4B363;
+  background-color: #E4B363;
+  color: #E4B363;
+}
+
+.leftcolumn ul li{
+  /*making the list horizontal*/
+  display: inline;
+  /*aligning the words together*/
+  vertical-align: middle;
+  margin: 45px;
+  font-family: Baskersville;
+  font-size: 18px; 
+}
+
+#itemheading{
+  margin-right: 420px;
+  margin-left: 0px;
+}
+
+#checkout{
+  /*checkout button*/
+  background-color: #8CBCB9;
+  border: none;
+  width: 440px; 
+  height: 88px;
+  font-family: Baskersville;
+  font-size: 24px;
+  margin: 50px 0px;
+}
+
+/*styles of the popup on the add to bag page*/
+
+#popup{
+  background-color: white;
+  opacity: 95%;
+  border: solid;
+  position: absolute;
+  top: 200px;
+  left: 250px;
+  width: 920px;
+  height: 650px;
+  visibility: hidden;
+}
+
+
+.suggestedfont{
+  font-family: Montserrat, sans-serif;
+}
+
+#success{
+  font-size: 24px;
+  margin: 30px 50px; 
+}
+
+#suggest{
+  font-size: 20px;
+}
+
+#suggestedproduct{
+ /*image*/
+ width: 250px;
+ height: 250px;
+ object-fit: cover;
+}
+
+.popupbutton{
+  /*both buttons style*/
+  width: 330px;
+  height: 80px;
+  border: none;
+  font-family: Montserrat, sans-serif;
+  font-size: 24px;
+}
+
+#continuetobag{
+  background-color: #8CBCB9;
+  margin-right: 10px;
+}
+
+#backtobrowse{ 
+  background-color: #DDC3D0;
+  margin-left: 10px;
+}
