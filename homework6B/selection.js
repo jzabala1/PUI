@@ -76,17 +76,16 @@ function changeImage(id) {
   }
 }
 
-function Product(name, quantity, image, color, price) {
+function Product(name, quantity, image, color, price, altText, filling) {
   this.name = name;
   this.quantity = quantity;
   this.image = image;
   this.color = color;
   this.price = price;
+  this.alt = altText;
+  this.filling = filling;
   this.type = "Product"; 
-  this.inbag = false;
 }
-
-let overallQuant = 0;
 
 function bagPopUp() {
   //this function makes it so the pop up accurately has the quantity and also makes things popup when add to bag is clicked
@@ -98,48 +97,95 @@ function bagPopUp() {
   let name = document.getElementById('detailtitle').textContent;
   let price = document.getElementById('productdetailprice').textContent;
   let image = document.getElementById('largethumbnail').src;
-  let product = new Product(name, quant, image, color, price); 
-  let cart = JSON.parse(localStorage.getItem("cart"))
+  let imageAlt = document.getElementById('largethumbnail').image_alt;
+  let product = new Product(name, quant, image, color, price, imageAlt, text); 
+  let cart = JSON.parse(localStorage.getItem("cart"));
+  let overallQuant = parseInt(localStorage.getItem("totalItems"), 10);
+  let productquant = parseInt(product.quantity, 10);
   if (cart.length > 0) {
     for (let i = 0; i < cart.length; i++) { 
       if (product.name === cart[i].name && product.color === cart[i].color) { 
-        cart[i].quant += product.quantity 
-        overallQuant += quant
-        localStorage.setItem("cart",JSON.stringify(cart))
+        console.log("first")
+        let cartquantity = parseInt(cart[i].quantity, 10);
+        cartquantity += productquant;
+        cart[i].quantity = JSON.stringify(cartquantity);
+        localStorage.setItem("cart",JSON.stringify(cart));
+        overallQuant += productquant;
+        localStorage.setItem("totalItems", JSON.stringify(overallQuant));
       }
       else {
+        console.log("seconnd")
         cart.push(product);
-        overallQuant += quant;
-        localStorage.setItem("cart",JSON.stringify(cart))
+        overallQuant += productquant;
+        localStorage.setItem("totalItems", JSON.stringify(overallQuant));
+        localStorage.setItem("cart",JSON.stringify(cart));
+        break;
       }
     }
   }
   else {
+    console.log("third")
     cart.push(product);
-    overallQuant += quant
-    localStorage.setItem("cart",JSON.stringify(cart))
-  localStorage.setItem("totalitemsinbag", `${overallQuant}`)
-  if (overallQuant != 0) {
-   document.getElementById("popupcircle").innerHTML = parseInt((localStorage.getItem("totalitemsinbag")), 10);
-   popupcircle.style.visibility = "visible";
+    localStorage.setItem("cart",JSON.stringify(cart));
+    overallQuant += productquant;
+    localStorage.setItem("totalItems", JSON.stringify(overallQuant));
   }
+  checkPopUp(overallQuant);  
   popup.style.visibility = "visible";
- }
+}
+
+function checkPopUp(overallQuant) {
+  if (overallQuant != 0) {
+    document.getElementById("popupcircle").innerHTML = parseInt((localStorage.getItem("totalItems")), 10);
+    popupcircle.style.visibility = "visible";
+  }
 }
 
 function onLoad() {
-  checkCart()
+  checkCart();
+  checkQuant();
   let popupcircle = document.getElementById("popupcircle");
-  //console.log(overallQuant);
-  //console.log(localStorage.getItem("totalitemsinbag"));
-  if (localStorage.getItem("totalitemsinbag") > 0) {
-   document.getElementById("popupcircle").innerHTML = parseInt((localStorage.getItem("totalitemsinbag")), 10);
+  let cart = JSON.parse(localStorage.getItem("cart"));
+  if (localStorage.getItem("totalItems") > 0) {
+   document.getElementById("popupcircle").innerHTML = parseInt((localStorage.getItem("totalItems")), 10);
    popupcircle.style.visibility = "visible";
+  }
+  if (cart.length > 0) {
+    console.log(cart.length);
+    for (let i = 0; i < cart.length; i++) {
+      console.log(i);
+      if (i === 0) {
+        let cartRow = document.createElement('div');
+        cartRow.classList.add("row");
+        console.log(cartRow);
+        let productContainer = document.getElementById("product-container");
+        let totalPrice = parseInt(cart[i].quantity) * parseInt(cart[i].price)
+        let productDetails = `
+          <img class = "productimage" src="${cart[i].image}" 
+          alt="${cart[i].altText}">
+          <ul class = "productbagdetails">
+            <li class ="productli">${cart[i].name}</li>
+            <li class ="productli">Color:${cart[i].color}</li>
+            <li class ="productli">Filling:${cart[i].filling}</li>
+          </ul>
+          <button class="bagbutton" id="editbutton">Edit</button>
+          <button class="bagbutton" id="removebutton">Remove</button>
+          <ul class = "productnumbers"> 
+            <li class = "productnumbersli" id="pricebag">${cart[i].price}</li>
+            <li class = "productnumbersli" id="quantbag">${cart[i].quantity}</li>
+            <li class = "productnumbersli" id="totalbag">${totalPrice}</li>
+          </ul>`
+        cartRow.innerHTML = productDetails;
+        productContainer.append(cartRow); 
+    }
+   }
   } 
-}
+ }
+
 
 
 function checkCart() {
+  //function iniatlizes the cart but makes sure that if that cart is already is established it is not made again
   try{
     JSON.parse(localStorage.getItem("cart")).length
   }
@@ -149,10 +195,22 @@ function checkCart() {
   }
 }
 
-//function that on load checks for the quant and then adds the pop if so 
+function checkQuant() {
+  //function iniatlizes the totalItems counter but makes sure that if that totalItems is already is established it is not made again
+  if (localStorage.getItem("totalItems") === null) {
+    localStorage.setItem("totalItems", 0);
+  }
+}
 
-//function that on load checks the cart contents and shows them on the page
+
+
+//when page loads go through the cart and if the something is in cart display items
 
 //function that on click of removal button sets the in bag to false
 
 //Update totals in the cart 
+
+//challenge one - make sure things that are not overwritten only initialized once
+//challenge two - make sure things taken from storage are in the right form to be manipulated
+//overcame with a lot of print statments 
+//then also learning how to use try, catch, and break
