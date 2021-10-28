@@ -684,6 +684,10 @@ input[type=number] {
   height: 600px;
 }
 
+#bagfoot{
+  margin-top: 800px;
+}
+
 .bagheading{
   font-family: Baskerville;
   display: inline-block;
@@ -705,11 +709,12 @@ input[type=number] {
 /* setting up right and left columns on bag page*/
 
 .leftcolumn{
-  float: left;
+  position:  absolute;
+  top: 250px;
+  left:  10px;
   padding-left: 25px;
   width: 945px;
   text-align: left;
-  
 }
 
 .leftcolumn p{
@@ -723,8 +728,10 @@ input[type=number] {
 }
 
 .rightcolumn{
-  float: left;
-  width: 400px;
+  position: absolute;
+  top: 250px;
+  left:  1000px;
+  width: 200px;
 }
 
 .leftcolumn hr{
@@ -737,7 +744,7 @@ input[type=number] {
   color: #E4B363;
 }
 
-.leftcolumn ul li{
+.leftcolumnli{
   /*making the list horizontal*/
   display: inline;
   /*aligning the words together*/
@@ -815,4 +822,71 @@ input[type=number] {
 #backtobrowse{ 
   background-color: #DDC3D0;
   margin-left: 10px;
+}
+
+.productimage{
+  width: 200px;
+  height: 175px;
+  object-fit: cover;
+  position: absolute;
+  top: 80px;
+  left: 30px;
+}
+
+.row{
+  width: 1000px;
+  height: 200px;
+}
+
+.productbagdetails{
+  position: absolute;
+  top: 70px;
+  left: 210px;
+  list-style-type: none;
+}
+
+.productli{
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+}
+
+.bagbutton{
+  font-family: Baskerville;
+  font-size: 18px;
+  background-color: white;
+  border: none;
+  text-decoration: underline;
+}
+
+#editbutton{
+  position: absolute;
+  top: 225px;
+  left: 245px ;
+}
+
+#removebutton{
+  position: absolute;
+  top: 225px;
+  left: 295px;
+}
+
+.productnumbers{
+  margin-left: 400px;
+}
+
+.productnumbersli{
+  /*making the list horizontal*/
+  display: inline;
+  /*aligning the words together*/
+  vertical-align: middle;
+  font-family: Montserrat, sans-serif;
+  font-size: 18px; 
+}
+
+#pricebag{
+  margin-right: 110px;
+}
+
+#totalbag{
+  margin-left: 115px;
 }

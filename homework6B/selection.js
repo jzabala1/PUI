@@ -76,8 +76,15 @@ function changeImage(id) {
   }
 }
 
-
-
+function Product(name, quantity, image, color, price) {
+  this.name = name;
+  this.quantity = quantity;
+  this.image = image;
+  this.color = color;
+  this.price = price;
+  this.type = "Product"; 
+  this.inbag = false;
+}
 
 function bagPopUp() {
   //this function makes it so the pop up accurately has the quantity and also makes things popup when add to bag is clicked
@@ -89,10 +96,75 @@ function bagPopUp() {
   let name = document.getElementById('detailtitle').textContent;
   let price = document.getElementById('productdetailprice').textContent;
   let image = document.getElementById('largethumbnail').src;
-  if (quant != 0) {
-   document.getElementById("popupcircle").innerHTML = `${quant}`;
+  let product = new Product(name, quant, image, color, price); 
+  let cart = JSON.parse(localStorage.getItem("cart"))
+  let overallQuant = parseInt((localStorage.getItem("overallQuant")), 10);
+  if (cart.length > 0) {
+    for (let i = 0; i < cart.length; i++) { 
+      if (product.name === cart[i].name && product.color === cart[i].color) { 
+        cart[i].quantity += product.quantity 
+        overallQuant += product.quantity
+        localStorage.setItem("cart",JSON.stringify(cart))
+        localStorage.setItem("overallQuant", `${overallQuant}`)
+      }
+      else {
+        cart.push(product);
+        overallQuant += product.quantity
+        localStorage.setItem("cart",JSON.stringify(cart))
+        localStorage.setItem("overallQuant", `${overallQuant}`)
+      }
+    }
+  }
+  else {
+    cart.push(product);
+    overallQuant += quant
+    localStorage.setItem("cart",JSON.stringify(cart))
+    localStorage.setItem("overallQuant", `${overallQuant}`)
+  if (overallQuant != 0) {
+   document.getElementById("popupcircle").innerHTML = parseInt((localStorage.getItem("overallQuant")), 10);
    popupcircle.style.visibility = "visible";
-   popup.style.visibility = "visible";
-
+  }
+  popup.style.visibility = "visible";
+  console.log(localStorage)
  }
 }
+
+function onLoad() {
+  checkCart();
+  checkQuant();
+  let popupcircle = document.getElementById("popupcircle");
+  if (localStorage.getItem("overallQuant") > 0) {
+   document.getElementById("popupcircle").innerHTML = parseInt((localStorage.getItem("overallQuant")), 10);
+   popupcircle.style.visibility = "visible";
+  } 
+}
+
+
+function checkCart() {
+  try{
+    JSON.parse(localStorage.getItem("cart")).length
+  }
+  catch(error){
+    let cart = [];
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }
+}
+
+function checkQuant(){
+ try{
+  overallQuant + 1 
+ }
+ catch(error){
+  let overallQuant = 0;
+  console.log(overallQuant)
+  localStorage.setItem("overallQuant", JSON.stringify(overallQuant))
+ }
+}
+
+//function that on load checks for the quant and then adds the pop if so 
+
+//function that on load checks the cart contents and shows them on the page
+
+//function that on click of removal button sets the in bag to false
+
+//Update totals in the cart 

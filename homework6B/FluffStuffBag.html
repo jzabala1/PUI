@@ -10,7 +10,7 @@
    <script src="selection.js"> </script>
 </head>
 
-<body id ="bagbody">
+<body id ="bagbody" onload="onLoad()">
 	<header>
     <nav>
       <a href="Fluff_Stuff_Home_Page.html" id= "logo">FluffStuff</a>
@@ -39,13 +39,30 @@
   <div class ="leftcolumn">
     <hr>
     <ul>
-      <li id="itemheading">Item</li>
-      <li>Price</li>
-      <li>Quantity</li>
-      <li>Total</li>
+      <li class = "leftcolumnli" id="itemheading">Item</li>
+      <li class = "leftcolumnli">Price</li>
+      <li class = "leftcolumnli">Quantity</li>
+      <li class = "leftcolumnli">Total</li>
     </ul>
     <hr>
-  </div> 
+    <div id="product-container">
+      <div class="row">
+        <img class = "productimage" src="https://images.unsplash.com/photo-1588706235076-627d896e9f67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" alt="brown leather couch with a white tassled pillow on them ">
+        <ul class = "productbagdetails">
+          <li class ="productli">Name</li>
+          <li class ="productli">Color:</li>
+          <li class ="productli">Filling:</li>
+        </ul>
+        <button class="bagbutton" id="editbutton">Edit</button>
+        <button class="bagbutton" id="removebutton">Remove</button>
+        <ul class = "productnumbers"> 
+          <li class = "productnumbersli" id="pricebag">00.00</li>
+          <li class = "productnumbersli" id="quantbag">0</li>
+          <li class = "productnumbersli" id="totalbag">100.00</li>
+        </ul>
+      </div>
+    </div>
+  </div>
   
   <div class ="rightcolumn">
     <p id="subtotal">Subtotal:</p>
@@ -54,10 +71,8 @@
     <p id="total">Total: </p>
     <button id="checkout">Proceed to Checkout</button>
   </div> 
-  
 
-
-  <footer>
+  <footer id="bagfoot">
     <!-- line -->
     <hr>
     <!--Shop footer -->
