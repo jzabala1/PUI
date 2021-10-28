@@ -102,8 +102,6 @@ function bagPopUp() {
   let cart = JSON.parse(localStorage.getItem("cart"))
   if (cart.length > 0) {
     for (let i = 0; i < cart.length; i++) { 
-      console.log(product.name === cart[i].name)
-      console.log(product.color === cart[i].color)
       if (product.name === cart[i].name && product.color === cart[i].color) { 
         cart[i].quant += product.quantity 
         overallQuant += quant
@@ -112,7 +110,6 @@ function bagPopUp() {
       else {
         cart.push(product);
         overallQuant += quant;
-        console.log(cart);
         localStorage.setItem("cart",JSON.stringify(cart))
       }
     }
@@ -142,12 +139,11 @@ function onLoad() {
 }
 
 
-function checkCheck() {
+function checkCart() {
   try{
     JSON.parse(localStorage.getItem("cart")).length
   }
   catch(error){
-    console.log("yes")
     let cart = [];
     localStorage.setItem("cart", JSON.stringify(cart));
   }
