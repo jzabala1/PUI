@@ -86,6 +86,8 @@ function Product(name, quantity, image, color, price) {
   this.inbag = false;
 }
 
+let overallQuant = 0;
+
 function bagPopUp() {
   //this function makes it so the pop up accurately has the quantity and also makes things popup when add to bag is clicked
   //also stores information from page
@@ -98,20 +100,20 @@ function bagPopUp() {
   let image = document.getElementById('largethumbnail').src;
   let product = new Product(name, quant, image, color, price); 
   let cart = JSON.parse(localStorage.getItem("cart"))
-  let overallQuant = parseInt((localStorage.getItem("overallQuant")), 10);
   if (cart.length > 0) {
     for (let i = 0; i < cart.length; i++) { 
+      console.log(product.name === cart[i].name)
+      console.log(product.color === cart[i].color)
       if (product.name === cart[i].name && product.color === cart[i].color) { 
-        cart[i].quantity += product.quantity 
-        overallQuant += product.quantity
+        cart[i].quant += product.quantity 
+        overallQuant += quant
         localStorage.setItem("cart",JSON.stringify(cart))
-        localStorage.setItem("overallQuant", `${overallQuant}`)
       }
       else {
         cart.push(product);
-        overallQuant += product.quantity
+        overallQuant += quant;
+        console.log(cart);
         localStorage.setItem("cart",JSON.stringify(cart))
-        localStorage.setItem("overallQuant", `${overallQuant}`)
       }
     }
   }
@@ -119,46 +121,36 @@ function bagPopUp() {
     cart.push(product);
     overallQuant += quant
     localStorage.setItem("cart",JSON.stringify(cart))
-    localStorage.setItem("overallQuant", `${overallQuant}`)
+  localStorage.setItem("totalitemsinbag", `${overallQuant}`)
   if (overallQuant != 0) {
-   document.getElementById("popupcircle").innerHTML = parseInt((localStorage.getItem("overallQuant")), 10);
+   document.getElementById("popupcircle").innerHTML = parseInt((localStorage.getItem("totalitemsinbag")), 10);
    popupcircle.style.visibility = "visible";
   }
   popup.style.visibility = "visible";
-  console.log(localStorage)
  }
 }
 
 function onLoad() {
-  checkCart();
-  checkQuant();
+  checkCart()
   let popupcircle = document.getElementById("popupcircle");
-  if (localStorage.getItem("overallQuant") > 0) {
-   document.getElementById("popupcircle").innerHTML = parseInt((localStorage.getItem("overallQuant")), 10);
+  //console.log(overallQuant);
+  //console.log(localStorage.getItem("totalitemsinbag"));
+  if (localStorage.getItem("totalitemsinbag") > 0) {
+   document.getElementById("popupcircle").innerHTML = parseInt((localStorage.getItem("totalitemsinbag")), 10);
    popupcircle.style.visibility = "visible";
   } 
 }
 
 
-function checkCart() {
+function checkCheck() {
   try{
     JSON.parse(localStorage.getItem("cart")).length
   }
   catch(error){
+    console.log("yes")
     let cart = [];
     localStorage.setItem("cart", JSON.stringify(cart));
   }
-}
-
-function checkQuant(){
- try{
-  overallQuant + 1 
- }
- catch(error){
-  let overallQuant = 0;
-  console.log(overallQuant)
-  localStorage.setItem("overallQuant", JSON.stringify(overallQuant))
- }
 }
 
 //function that on load checks for the quant and then adds the pop if so 
