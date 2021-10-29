@@ -42,7 +42,7 @@ function changeImage(id) {
     thumbTwo.src = `https://images.unsplash.com/photo-1617325710236-4a36d46427c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw
     xfDB8MXxyYW5kb218MHx8fHx8fHx8MTYyOTQ4NjQ3Ng&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080`;
     thumbTwo.alt = "Wicker chair with a long grey pillow on it"
-    thumbThree.src `https://images.unsplash.com/photo-1519961655809-34fa156820ff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXw
+    thumbThree.src = `https://images.unsplash.com/photo-1519961655809-34fa156820ff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXw
     xfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit`;
     thumbThree.alt = "Round couch with a stack of white,grey,and blue pillows"
   }
@@ -102,33 +102,39 @@ function bagPopUp() {
   let cart = JSON.parse(localStorage.getItem("cart"));
   let overallQuant = parseInt(localStorage.getItem("totalItems"), 10);
   let productquant = parseInt(product.quantity, 10);
+  let subTotal = parseInt(localStorage.getItem("total"), 10);
+  let priceTrimmed = price.replace("$", "")
+  let total = parseInt(productquant, 10) * parseInt(priceTrimmed, 10)
   if (cart.length > 0) {
     for (let i = 0; i < cart.length; i++) { 
       if (product.name === cart[i].name && product.color === cart[i].color) { 
-        console.log("first")
         let cartquantity = parseInt(cart[i].quantity, 10);
         cartquantity += productquant;
         cart[i].quantity = JSON.stringify(cartquantity);
         localStorage.setItem("cart",JSON.stringify(cart));
         overallQuant += productquant;
         localStorage.setItem("totalItems", JSON.stringify(overallQuant));
+        subTotal += total
+        localStorage.setItem("total", JSON.stringify(subTotal));
       }
       else {
-        console.log("seconnd")
         cart.push(product);
         overallQuant += productquant;
         localStorage.setItem("totalItems", JSON.stringify(overallQuant));
         localStorage.setItem("cart",JSON.stringify(cart));
+        subTotal += total
+        localStorage.setItem("total", JSON.stringify(subTotal));
         break;
       }
     }
   }
   else {
-    console.log("third")
     cart.push(product);
     localStorage.setItem("cart",JSON.stringify(cart));
     overallQuant += productquant;
     localStorage.setItem("totalItems", JSON.stringify(overallQuant));
+    subTotal += total
+    localStorage.setItem("total", JSON.stringify(subTotal));    
   }
   checkPopUp(overallQuant);  
   popup.style.visibility = "visible";
@@ -145,6 +151,7 @@ function checkPopUp(overallQuant) {
 function onLoad() {
   checkCart();
   checkQuant();
+  checkTotal();
   let popupcircle = document.getElementById("popupcircle");
   let cart = JSON.parse(localStorage.getItem("cart"));
   if (localStorage.getItem("totalItems") > 0) {
@@ -152,10 +159,15 @@ function onLoad() {
    popupcircle.style.visibility = "visible";
   }
   if (cart.length > 0) {
+    let subT = parseInt((localStorage.getItem("total")), 10);
+    document.getElementById("subtotal").innerHTML = `Subtotal: $${subT}` 
+    document.getElementById("total").innerHTML = `Total: $${subT}` 
     for (let i = 0; i < cart.length; i++) {
       let priceTrimmed = cart[i].price.replace("$", "")
       //Ther rounding with math.round is from stackoverflow user drudge
-      let totalPrice = "$" + (Math.round(parseInt(cart[i].quantity, 10) * parseInt(priceTrimmed, 10) * 100) / 100).toFixed(2);
+      let total = parseInt(cart[i].quantity, 10) * parseInt(priceTrimmed, 10)
+      let math = (Math.round(total * 100) / 100).toFixed(2);
+      let totalPrice = "$" + math;
       let colorTrimmed = cart[i].color.replace("circle", "") 
       if (colorTrimmed === "rainyday") {
         colorTrimmed = "Rainy Day"
@@ -231,6 +243,7 @@ function onLoad() {
    }
   }
   let removeButtons = document.getElementsByClassName("removebutton");
+  //got some of this from Web Dev Simplified on youtube (the button parent element remove)
   for (let i=0; i < removeButtons.length; i++) {
     let button = removeButtons[i];
     button.addEventListener('click', function(event) {
@@ -238,8 +251,12 @@ function onLoad() {
       buttonClicked.parentElement.remove();
       console.log(buttonClicked.parentElement);
       let cart = JSON.parse(localStorage.getItem("cart"));
+      let overallQuant = parseInt(localStorage.getItem("totalItems"), 10);
+      overallQuant -= parseInt(cart[i].quantity, 10)
+      localStorage.setItem("totalItems", JSON.stringify(overallQuant))
       cart.splice(i, 1);
       localStorage.setItem("cart", JSON.stringify(cart));
+      location.reload(true);
     })
   }
 
@@ -265,16 +282,19 @@ function checkQuant() {
   }
 }
 
+function checkTotal() {
+  //function iniatlizes the totalcounter but makes sure that if that total is already is established it is not made again
+  if (localStorage.getItem("total") === null) {
+    localStorage.setItem("total", 0);
+  }
+}
 
-
-//when page loads go through the cart and if the something is in cart display items
-
-//function that on click of removal button sets the in bag to false
-
-//Update totals in the cart 
+//Update totals in the cart when things are removed
 
 
 //challenge one - make sure things that are not overwritten only initialized once
 //challenge two - make sure things taken from storage are in the right form to be manipulated
 //overcame with a lot of print statments 
 //then also learning how to use try, catch, and break
+//figuring out the order of operations
+//this just takes a lot of debugging and I draw on a white board to just see how things are happening
