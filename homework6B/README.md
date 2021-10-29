@@ -24,3 +24,5 @@ Cozy Denim Pictures: Thumbnail 1: NeONBRAND , Thumbnail 2: Per Lööv ,Thumbnail
 
 Bag Pictures:
 Are the same as ones shown in product detail pages 
+
+Reccomended Product Picture: Stephanie Harvey
