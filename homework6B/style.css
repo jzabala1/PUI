@@ -848,6 +848,7 @@ input[type=number] {
 .productli{
   font-family: Montserrat, sans-serif;
   font-size: 18px;
+  text-align: left;
 }
 
 .bagbutton{
@@ -858,13 +859,13 @@ input[type=number] {
   text-decoration: underline;
 }
 
-#editbutton{
+.editbutton{
   position: absolute;
   top: 225px;
   left: 245px ;
 }
 
-#removebutton{
+.removebutton{
   position: absolute;
   top: 225px;
   left: 295px;

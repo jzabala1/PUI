@@ -141,6 +141,7 @@ function checkPopUp(overallQuant) {
   }
 }
 
+
 function onLoad() {
   checkCart();
   checkQuant();
@@ -151,25 +152,38 @@ function onLoad() {
    popupcircle.style.visibility = "visible";
   }
   if (cart.length > 0) {
-    console.log(cart.length);
     for (let i = 0; i < cart.length; i++) {
-      console.log(i);
+      let priceTrimmed = cart[i].price.replace("$", "")
+      //Ther rounding with math.round is from stackoverflow user drudge
+      let totalPrice = "$" + (Math.round(parseInt(cart[i].quantity, 10) * parseInt(priceTrimmed, 10) * 100) / 100).toFixed(2);
+      let colorTrimmed = cart[i].color.replace("circle", "") 
+      if (colorTrimmed === "rainyday") {
+        colorTrimmed = "Rainy Day"
+      }
+      else if (colorTrimmed === "morninghaze") {
+        colorTrimmed = "Morning Haze"
+      }
+      else if (colorTrimmed === "cozydenim") {
+        colorTrimmed = "Cozy Denim"
+      }
+      else{
+        colorTrimmed = "AfterSchool Special"
+      }
       if (i === 0) {
         let cartRow = document.createElement('div');
         cartRow.classList.add("row");
-        console.log(cartRow);
         let productContainer = document.getElementById("product-container");
-        let totalPrice = parseInt(cart[i].quantity) * parseInt(cart[i].price)
+        console.log( )
         let productDetails = `
           <img class = "productimage" src="${cart[i].image}" 
           alt="${cart[i].altText}">
           <ul class = "productbagdetails">
             <li class ="productli">${cart[i].name}</li>
-            <li class ="productli">Color:${cart[i].color}</li>
-            <li class ="productli">Filling:${cart[i].filling}</li>
+            <li class ="productli">Color: ${colorTrimmed}</li>
+            <li class ="productli">Filling: ${cart[i].filling}</li>
           </ul>
-          <button class="bagbutton" id="editbutton">Edit</button>
-          <button class="bagbutton" id="removebutton">Remove</button>
+          <button class="bagbutton editbutton">Edit</button>
+          <button class="bagbutton removebutton">Remove</button>
           <ul class = "productnumbers"> 
             <li class = "productnumbersli" id="pricebag">${cart[i].price}</li>
             <li class = "productnumbersli" id="quantbag">${cart[i].quantity}</li>
@@ -177,9 +191,58 @@ function onLoad() {
           </ul>`
         cartRow.innerHTML = productDetails;
         productContainer.append(cartRow); 
+        let productBagDetails = document.getElementsByClassName("productbagdetails")[i];
+    }
+      else{
+        let cartRow = document.createElement('div');
+        cartRow.classList.add("row");
+        let productContainer = document.getElementById("product-container");
+        let productDetails = `
+          <img class = "productimage" src="${cart[i].image}" 
+          alt="${cart[i].altText}">
+          <ul class = "productbagdetails">
+            <li class ="productli">${cart[i].name}</li>
+            <li class ="productli">Color: ${colorTrimmed}</li>
+            <li class ="productli">Filling: ${cart[i].filling}</li>
+          </ul>
+          <button class="bagbutton editbutton">Edit</button>
+          <button class="bagbutton removebutton">Remove</button>
+          <ul class = "productnumbers"> 
+            <li class = "productnumbersli" id="pricebag">${cart[i].price}</li>
+            <li class = "productnumbersli" id="quantbag">${cart[i].quantity}</li>
+            <li class = "productnumbersli" id="totalbag">${totalPrice}</li>
+          </ul>`
+        cartRow.innerHTML = productDetails;
+        productContainer.append(cartRow); 
+        let productBagDetails = document.getElementsByClassName("productbagdetails")[i];
+        let productPicture = document.getElementsByClassName("productimage")[i];
+        let editButton = document.getElementsByClassName("editbutton")[i];
+        let removeButton = document.getElementsByClassName("removebutton")[i];
+        let height = 175 
+        productBagDetails.style.position = "absolute"
+        productBagDetails.style.top = `${(height * i) + 100}px`
+        productPicture.style.position = "absolute"
+        productPicture.style.top = `${(height * i) + 100}px`
+        editButton.style.position = "absolute"
+        editButton.style.top = `${(height * i) + 245}px`
+        removeButton.style.position = "absolute"
+        removeButton.style.top = `${(height * i) + 245}px`        
     }
    }
-  } 
+  }
+  let removeButtons = document.getElementsByClassName("removebutton");
+  for (let i=0; i < removeButtons.length; i++) {
+    let button = removeButtons[i];
+    button.addEventListener('click', function(event) {
+      let buttonClicked = event.target;
+      buttonClicked.parentElement.remove();
+      console.log(buttonClicked.parentElement);
+      let cart = JSON.parse(localStorage.getItem("cart"));
+      cart.splice(i, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+    })
+  }
+
  }
 
 
@@ -209,6 +272,7 @@ function checkQuant() {
 //function that on click of removal button sets the in bag to false
 
 //Update totals in the cart 
+
 
 //challenge one - make sure things that are not overwritten only initialized once
 //challenge two - make sure things taken from storage are in the right form to be manipulated
