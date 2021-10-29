@@ -108,7 +108,7 @@ function bagPopUp() {
   let total = parseInt(productquant, 10) * parseInt(priceTrimmed, 10)
   if (cart.length > 0) {
     for (let i = 0; i < cart.length; i++) { 
-      if (product.name === cart[i].name && product.color === cart[i].color) { 
+      if (product.name === cart[i].name && product.color === cart[i].color && product.filling === cart[i].filling) { 
         let cartquantity = parseInt(cart[i].quantity, 10);
         cartquantity += productquant;
         cart[i].quantity = JSON.stringify(cartquantity);
