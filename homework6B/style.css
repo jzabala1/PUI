@@ -825,6 +825,7 @@ input[type=number] {
 }
 
 .productimage{
+  /*Setting the size and postion of the product images*/
   width: 200px;
   height: 175px;
   object-fit: cover;
@@ -834,11 +835,13 @@ input[type=number] {
 }
 
 .row{
+  /*Setting the size of the rows that will be added*/
   width: 1000px;
   height: 200px;
 }
 
 .productbagdetails{
+  /*Positioning the name, filling, and color and removing the bullets*/
   position: absolute;
   top: 70px;
   left: 210px;
@@ -846,12 +849,14 @@ input[type=number] {
 }
 
 .productli{
+  /*setting list text styles*/
   font-family: Montserrat, sans-serif;
   font-size: 18px;
   text-align: left;
 }
 
 .bagbutton{
+  /*styling both the edit and remove buttons*/
   font-family: Baskerville;
   font-size: 18px;
   background-color: white;
@@ -860,18 +865,21 @@ input[type=number] {
 }
 
 .editbutton{
+  /*postitioning edit button*/
   position: absolute;
   top: 225px;
   left: 245px ;
 }
 
 .removebutton{
+  /*postitioning remove button*/
   position: absolute;
   top: 225px;
   left: 295px;
 }
 
 .productnumbers{
+  /*balancing them in the right position*/
   margin-left: 400px;
 }
 
@@ -885,9 +893,11 @@ input[type=number] {
 }
 
 #pricebag{
+  /*centering price under the price header*/
   margin-right: 110px;
 }
 
 #totalbag{
+  /*centering total under the total header*/
   margin-left: 115px;
 }

@@ -77,6 +77,7 @@ function changeImage(id) {
 }
 
 function Product(name, quantity, image, color, price, altText, filling) {
+  //creating a product object 
   this.name = name;
   this.quantity = quantity;
   this.image = image;
@@ -89,7 +90,7 @@ function Product(name, quantity, image, color, price, altText, filling) {
 
 function bagPopUp() {
   //this function makes it so the pop up accurately has the quantity and also makes things popup when add to bag is clicked
-  //also stores information from page
+  //also stores information from page (makes a new product, updates the total cost, total items, and the cart)
   let quant = document.getElementById('quantity').value;
   let select = document.getElementById('dropdownfilling');
   let text = select.options[select.selectedIndex].text;
@@ -141,6 +142,7 @@ function bagPopUp() {
 }
 
 function checkPopUp(overallQuant) {
+  //this function just makes sure that when the quantity is 0 the popup doesn't show but if it is greater it shows up 
   if (overallQuant != 0) {
     document.getElementById("popupcircle").innerHTML = parseInt((localStorage.getItem("totalItems")), 10);
     popupcircle.style.visibility = "visible";
@@ -149,11 +151,13 @@ function checkPopUp(overallQuant) {
 
 
 function onLoad() {
+  //these three function initilize the local storage elements
   checkCart();
   checkQuant();
   checkTotal();
   let popupcircle = document.getElementById("popupcircle");
   let cart = JSON.parse(localStorage.getItem("cart"));
+  //this makes sure the popup shows up on other pages on load
   if (localStorage.getItem("totalItems") > 0) {
    document.getElementById("popupcircle").innerHTML = parseInt((localStorage.getItem("totalItems")), 10);
    popupcircle.style.visibility = "visible";
@@ -162,6 +166,7 @@ function onLoad() {
     let subT = parseInt((localStorage.getItem("total")), 10);
     document.getElementById("subtotal").innerHTML = `Subtotal: $${subT}` 
     document.getElementById("total").innerHTML = `Total: $${subT}` 
+    //this manipulates the parts of the product object so that they can be presented in a certain way (changing the color and number into the right format)
     for (let i = 0; i < cart.length; i++) {
       let priceTrimmed = cart[i].price.replace("$", "")
       //Ther rounding with math.round is from stackoverflow user drudge
@@ -185,7 +190,7 @@ function onLoad() {
         let cartRow = document.createElement('div');
         cartRow.classList.add("row");
         let productContainer = document.getElementById("product-container");
-        console.log( )
+        //this also makes it so that when the bag loads the products load in the right format for the first object
         let productDetails = `
           <img class = "productimage" src="${cart[i].image}" 
           alt="${cart[i].altText}">
@@ -209,6 +214,7 @@ function onLoad() {
         let cartRow = document.createElement('div');
         cartRow.classList.add("row");
         let productContainer = document.getElementById("product-container");
+        //this also makes it so that when the bag loads the products load in the right format for the objects after the first one
         let productDetails = `
           <img class = "productimage" src="${cart[i].image}" 
           alt="${cart[i].altText}">
@@ -231,6 +237,7 @@ function onLoad() {
         let editButton = document.getElementsByClassName("editbutton")[i];
         let removeButton = document.getElementsByClassName("removebutton")[i];
         let height = 175 
+        //the first bag item has a set position and the next cart items postitions are based on their cart index number and the first position
         productBagDetails.style.position = "absolute"
         productBagDetails.style.top = `${(height * i) + 100}px`
         productPicture.style.position = "absolute"
@@ -244,18 +251,27 @@ function onLoad() {
   }
   let removeButtons = document.getElementsByClassName("removebutton");
   //got some of this from Web Dev Simplified on youtube (the button parent element remove)
+  //this goes through all of the remove buttons and checks if they have been clicked 
+  //if they have been clicked it deletes the parent object, updates total, totalItems, and the cart
   for (let i=0; i < removeButtons.length; i++) {
     let button = removeButtons[i];
     button.addEventListener('click', function(event) {
       let buttonClicked = event.target;
       buttonClicked.parentElement.remove();
-      console.log(buttonClicked.parentElement);
       let cart = JSON.parse(localStorage.getItem("cart"));
       let overallQuant = parseInt(localStorage.getItem("totalItems"), 10);
-      overallQuant -= parseInt(cart[i].quantity, 10)
-      localStorage.setItem("totalItems", JSON.stringify(overallQuant))
+      let price = cart[i].price;
+      let priceTrimmed = price.replace("$", "");
+      let subTotal = parseInt(localStorage.getItem("total"), 10);
+      let total = parseInt(cart[i].quantity, 10) * parseInt(priceTrimmed, 10);
+      subTotal -= total;
+      localStorage.setItem("total", JSON.stringify(subTotal));
+      console.log(subTotal)
+      overallQuant -= parseInt(cart[i].quantity, 10);
+      localStorage.setItem("totalItems", JSON.stringify(overallQuant));
       cart.splice(i, 1);
       localStorage.setItem("cart", JSON.stringify(cart));
+      //this is just so the page updates and so the elements updates 
       location.reload(true);
     })
   }
@@ -288,13 +304,3 @@ function checkTotal() {
     localStorage.setItem("total", 0);
   }
 }
-
-//Update totals in the cart when things are removed
-
-
-//challenge one - make sure things that are not overwritten only initialized once
-//challenge two - make sure things taken from storage are in the right form to be manipulated
-//overcame with a lot of print statments 
-//then also learning how to use try, catch, and break
-//figuring out the order of operations
-//this just takes a lot of debugging and I draw on a white board to just see how things are happening
