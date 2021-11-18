@@ -1,0 +1,43 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Hind&display=swap');
+
+
+/*changing the color and font of my name in the nav*/
+h3,
+.navbar-brand{
+	font-family: 'Archivo Black', sans-serif;
+}
+
+/*changing the font of the nav items*/
+.navbar li a{
+	font-family: 'Hind', sans-serif;
+}
+
+h3{
+	color: #E76F51;
+}
+
+
+.btn-primary:hover{
+	background-color: #D66347;
+	border-color: #D66347;
+	font-family: 'Hind', sans-serif;
+}
+
+.btn-primary,.btn-primary:active, .btn-primary:visited{
+	background-color:  #E76F51;
+	border-color:  #E76F51;
+	font-family: 'Hind', sans-serif;
+}
+
+h4{
+	font-family: 'Hind', sans-serif;
+}
+
+.bi-chevron-down{
+	color: #E76F51;
+}
+
+.bi-chevron-down:hover{
+	color: #D66347;
+}
