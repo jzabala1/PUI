@@ -48,7 +48,7 @@ $arrow-line-width: 4px;
 	 display: block;
 	 width: 100px;
 	 height: 100px;
-	 position: absolute;
+	 position: relative;
 	 top: 86%;
 	 left: 50%;
 	 transform: translate(-50%, -50%) rotateZ(0deg);
@@ -67,7 +67,7 @@ $arrow-line-width: 4px;
 	 transform: translate(-50%, -50%) rotateZ(30deg);
 }
  .arrow {
-	 position: absolute;
+	 position: relative;
 	 left: 50%;
 	 transition: all 0.4s ease;
 }
@@ -89,14 +89,14 @@ $arrow-line-width: 4px;
 }
  .arrow:nth-child(1) {
 	 opacity: 0.3;
-	 top: 35%;
+	 top: 45%;
 }
  .arrow:nth-child(2) {
 	 opacity: 0.6;
-	 top: 55%;
+	 top: 65%;
 }
  .arrow:nth-child(3) {
 	 opacity: 0.9;
-	 top: 75%;
+	 top: 85%;
 }
  
