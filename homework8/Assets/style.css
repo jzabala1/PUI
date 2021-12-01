@@ -100,3 +100,15 @@ $arrow-line-width: 4px;
 	 top: 85%;
 }
  
+.nounderline{
+	text-decoration: none;
+}
+
+.hovercover:before{
+	opacity: 0.1;
+}
+
+.hovercover:hover, .hovercover:after{
+	opacity: 0.9;
+	cursor: pointer;
+}
