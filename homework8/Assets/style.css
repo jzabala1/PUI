@@ -20,6 +20,7 @@ h2{
 
 /*Making the orange button slightly darker when you hover*/
 .btn-primary:hover{
+	color: black;
 	background-color: #D66347;
 	border-color: #D66347;
 	font-family: 'Hind', sans-serif;
@@ -27,6 +28,7 @@ h2{
 
 /*Making the orange button the same when it is active, visited, and normal*/
 .btn-primary,.btn-primary:active, .btn-primary:visited{
+	color: black;
 	background-color:  #E76F51;
 	border-color:  #E76F51;
 	font-family: 'Hind', sans-serif;
@@ -34,6 +36,7 @@ h2{
 
 /*Making the prototype button slightly darker blue*/
 .btn-secondary:hover{
+	color: black;
 	background-color: #92D1DC;
 	border-color: #92D1DC;
 	font-family: 'Hind', sans-serif;
@@ -41,6 +44,7 @@ h2{
 
 /*Making the prototype button blue*/
 .btn-secondary,.btn-secondary:active, .btn-secondary:visited{
+	color: black;
 	background-color:  #97D9E5;
 	border-color:  #97D9E5;
 	font-family: 'Hind', sans-serif;
