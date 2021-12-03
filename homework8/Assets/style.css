@@ -3,7 +3,7 @@
 
 
 /*changing the color and font of my name in the nav*/
-h2,
+h1, h2,
 .navbar-brand{
 	font-family: 'Archivo Black', sans-serif;
 }
@@ -30,10 +30,13 @@ h2{
 	font-family: 'Hind', sans-serif;
 }
 
-h3{
+h3, h4, h5{
 	font-family: 'Hind', sans-serif;
 }
 
+h4{
+	font-weight: bold;
+}
 
 $total-arrows: 3;
 $arrow-line-length: 50px;
