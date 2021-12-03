@@ -13,43 +13,51 @@ h1, h2,
 	font-family: 'Hind', sans-serif;
 }
 
+/*changing header 2 to orange */
 h2{
 	color: #E76F51;
 }
 
-
+/*Making the orange button slightly darker when you hover*/
 .btn-primary:hover{
 	background-color: #D66347;
 	border-color: #D66347;
 	font-family: 'Hind', sans-serif;
 }
 
+/*Making the orange button the same when it is active, visited, and normal*/
 .btn-primary,.btn-primary:active, .btn-primary:visited{
 	background-color:  #E76F51;
 	border-color:  #E76F51;
 	font-family: 'Hind', sans-serif;
 }
 
+/*Making the prototype button slightly darker blue*/
 .btn-secondary:hover{
 	background-color: #92D1DC;
 	border-color: #92D1DC;
 	font-family: 'Hind', sans-serif;
 }
 
+/*Making the prototype button blue*/
 .btn-secondary,.btn-secondary:active, .btn-secondary:visited{
 	background-color:  #97D9E5;
 	border-color:  #97D9E5;
 	font-family: 'Hind', sans-serif;
 }
 
+/*changing main font to hind*/
 h3, h4, h5{
 	font-family: 'Hind', sans-serif;
 }
 
+/*Making the subheaders bolded*/
 h4{
 	font-weight: bold;
 }
 
+/*using jurbank on codepens base */
+/*jquery selectors */ 
 $total-arrows: 3;
 $arrow-line-length: 50px;
 $arrow-line-width: 4px;
@@ -59,6 +67,7 @@ $arrow-line-width: 4px;
   transform: translate(-50%, -50%) rotateZ($rot);
 }
 
+/* moving arrows when they are hovered over */
 .arrow-container {
 	 display: block;
 	 width: 100px;
@@ -102,6 +111,8 @@ $arrow-line-width: 4px;
 	 transform-origin: bottom left;
 	 transform: translate(-50%, -50%) rotateZ(45deg);
 }
+
+/* each one moves accordily */
  .arrow:nth-child(1) {
 	 opacity: 0.3;
 	 top: 45%;
@@ -115,10 +126,12 @@ $arrow-line-width: 4px;
 	 top: 85%;
 }
  
+/* moving underline */
 .nounderline{
 	text-decoration: none;
 }
 
+/* making it so when you hover over the images they pop up in opacity*/
 .hovercover:before{
 	opacity: 0.1;
 }
@@ -128,12 +141,14 @@ $arrow-line-width: 4px;
 	cursor: pointer;
 }
 
+/* making lists be centered but left-aligned*/
 .insightList{
   display: inline-block; 
 	text-align: left; 
 	font-family: 'Hind', sans-serif;
 }
 
+/* making content be centered but left-aligned*/
 .divCentered {
   text-align: left; 
   margin: auto; 
