@@ -30,6 +30,18 @@ h2{
 	font-family: 'Hind', sans-serif;
 }
 
+.btn-secondary:hover{
+	background-color: #92D1DC;
+	border-color: #92D1DC;
+	font-family: 'Hind', sans-serif;
+}
+
+.btn-secondary,.btn-secondary:active, .btn-secondary:visited{
+	background-color:  #97D9E5;
+	border-color:  #97D9E5;
+	font-family: 'Hind', sans-serif;
+}
+
 h3, h4, h5{
 	font-family: 'Hind', sans-serif;
 }
@@ -114,4 +126,15 @@ $arrow-line-width: 4px;
 .hovercover:hover, .hovercover:after{
 	opacity: 0.9;
 	cursor: pointer;
+}
+
+.insightList{
+  display: inline-block; 
+	text-align: left; 
+	font-family: 'Hind', sans-serif;
+}
+
+.divCentered {
+  text-align: left; 
+  margin: auto; 
 }
